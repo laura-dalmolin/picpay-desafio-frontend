@@ -1,0 +1,58 @@
+.users {
+  margin: 2vw;
+}
+
+.user {
+  color: black;
+  background-color: white;
+  padding: 20px 40px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 12px 2px rgba(94, 94, 94, 0.062);
+}
+
+.user-name {
+  color: var(--primary-green);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.user-image {
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+}
+
+.user-info {
+  background-color: rgb(236, 236, 236);
+  color: gray;
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-size: 12px;
+  text-transform: lowercase;
+  margin-right: 4px;
+}
+
+.user > .info-wrapper {
+  margin-left: 16px;
+}
+
+.pay-button {
+  margin-left: auto;
+  background-color: var(--primary-green);
+  border: none;
+  padding: 8px 16px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+
+.pay-button:hover {
+  background-color: var(--primary-green-hover);
+}
