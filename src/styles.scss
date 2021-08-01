@@ -1,11 +1,24 @@
+
+@import '~@angular/material/theming';
+@include mat-core();
+
+$picpay-desafio-frontend-primary: mat-palette($mat-indigo);
+$picpay-desafio-frontend-accent: mat-palette($mat-pink, A200, A100, A400);
+$picpay-desafio-frontend-warn: mat-palette($mat-red);
+$picpay-desafio-frontend-theme: mat-light-theme($picpay-desafio-frontend-primary, $picpay-desafio-frontend-accent, $picpay-desafio-frontend-warn);
+
+@include angular-material-theme($picpay-desafio-frontend-theme);
+
 * {
   box-sizing: border-box;
 }
 
 :root {
   --primary-green: #67C970;
-  --primary-green-hover: #48aa52;
+  --primary-green-hover: #7ae685;
   --background: rgba(241, 241, 241, 0.808);
+  --dark-gray: rgb(51, 51, 51);
+  --light-gray: rgb(153, 153, 153);
 }
 
 html,
@@ -14,4 +27,65 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--background);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.btn {
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+
+.btn-primary:disabled,
+.btn-primary:hover:disabled {
+  background-color: gray;
+  color: white;
+  cursor: auto;
+}
+
+.btn-primary {
+  background-color: var(--primary-green);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-green-hover);
+}
+
+.btn-secondary {
+  background-color: rgb(240, 240, 240);
+  color: var(--primary-green);
+}
+
+.btn-secondary:hover {
+  background-color: rgb(235, 235, 235);
+}
+
+.dialog-title {
+  color: var(--primary-green);
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.dialog-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 40vw;
+  height: 30vh;
+  padding-top: 16px;
+}
+
+.button-spacer {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  gap: 8px;
 }
