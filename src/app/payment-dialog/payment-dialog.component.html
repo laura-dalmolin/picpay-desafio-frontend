@@ -1,0 +1,33 @@
+<div class="dialog-title" mat-dialog-title>
+  Pagamento para {{ user.name }}
+</div>
+<div class="dialog-content" mat-dialog-content>
+  <form *ngIf="!isProcessingPayment; else loading" [formGroup]="paymentForm" class="payment-form">
+
+    <mat-icon class="helper-icon">attach_money</mat-icon>
+    <div class="input-container">
+      <input [ngClass]="{'error-input': paymentForm.get('val').errors}" formControlName="val" type="text" class="card-input" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }"
+      currencyMask placeholder="R$ 0,00">
+      <span *ngIf="paymentForm.get('val').errors?.min" class="error">O valor precisa ser maior do que R$ 0,00</span>
+      <span *ngIf="paymentForm.get('val').errors?.required" class="error">Esse campo é obrigatório</span>
+    </div>
+    
+    <mat-icon class="helper-icon helper-icon--credit-card">credit_card</mat-icon>
+    <select formControlName="creditCard" class="card-select">
+      <option [ngValue]="card" *ngFor="let card of cards">{{ card.card_number | cardMask }}</option>
+    </select>
+
+  </form>
+  <ng-template #loading>
+    Processando pagamento...
+  </ng-template>
+</div>
+<div *ngIf="!isProcessingPayment" class="button-spacer">
+  <button class="btn btn-secondary" mat-dialog-close>
+    Cancelar
+  </button>
+  <button [disabled]="isFormInvalid()" (click)="processPayment()" class="btn btn-primary">
+    Pagar
+  </button>
+</div>
+<div class="loading"></div>

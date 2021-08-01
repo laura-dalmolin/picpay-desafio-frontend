@@ -1,0 +1,75 @@
+.payment-form {
+  width: 100%;
+  display: grid;
+  padding-top: 16px;
+  grid-template-columns: 3.5rem auto;
+  grid-template-rows: repeat(2, 3.5rem);
+  justify-items: left;
+  align-items: center;
+  row-gap: 12px;
+}
+
+.helper-icon {
+  color: var(--light-gray);
+  font-size: 2.5rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  margin-right: 12px;
+
+  &--credit-card {
+    margin-top: 12px;
+  }
+}
+
+.card-select {
+  width: 100%;
+  max-width: 100%;
+  background: #fff;
+  color: var(--dark-gray);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  height: 3rem;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+.card-input {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  height: 48px;
+  padding: 0 8px;
+}
+
+.card-select:active,
+.card-select:focus, 
+.card-input:active,
+.card-input:focus {
+  outline: none;
+  border: 1px solid var(--primary-green);
+}
+
+.error-input:active,
+.error-input:focus {
+  outline: none;
+  border: 1px solid red;
+}
+
+.error-input {
+  border: 1px solid red;
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+}
+
+.error {
+  position: absolute;
+  bottom: -14px;
+  left: 0px;
+  font-size: 10px;
+  color: red;
+}
