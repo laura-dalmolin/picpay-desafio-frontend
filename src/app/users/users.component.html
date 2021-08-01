@@ -1,4 +1,4 @@
-<div class="users">
+<div *ngIf="users.length > 0; else noUsersToShow" class="users">
   <div *ngFor="let user of users" class="user">
     <img class="user-image" [src]="user.img" />
     <div class="info-wrapper">
@@ -11,9 +11,14 @@
         <span [title]="'Id:' + user.id" class="user-info">#{{user.id}}</span>
       </div>
     </div>
-
-    <button type="button" class="pay-button">
+    <span class="spacer"></span>
+    <button (click)="openPaymentDialog(user)" type="button" class="btn btn-primary">
       Pagar
     </button>
   </div>
 </div>
+<ng-template #noUsersToShow>
+  <div class="error-message">
+    Ops! Parece que não temos nenhum usuário para exibir aqui.
+  </div>
+</ng-template>

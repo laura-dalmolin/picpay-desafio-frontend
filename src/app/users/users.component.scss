@@ -18,6 +18,7 @@
   color: var(--primary-green);
   font-size: 1.5rem;
   font-weight: 600;
+  padding-bottom: 4px;
 }
 
 .user-image {
@@ -40,19 +41,17 @@
   margin-left: 16px;
 }
 
-.pay-button {
+.spacer {
   margin-left: auto;
-  background-color: var(--primary-green);
-  border: none;
-  padding: 8px 16px;
-  color: white;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  text-transform: uppercase;
-  border-radius: 4px;
 }
 
-.pay-button:hover {
-  background-color: var(--primary-green-hover);
+.error-message {
+  background-color: white;
+  border-radius: 4px;
+  padding: 16px;
+  margin: 2vw;
+  text-align: center;
+  color: var(--primary-green);
+  font-weight: 500;
+  font-size: 1.2rem;
 }
